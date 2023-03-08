@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,20 +8,21 @@
     text-decoration: none;
 }
 
-html, body{
+html,
+body {
     font-size: 62.5%;
     font-family: 'Lato', sans-serif;
 }
 
-main{
+main {
     max-width: 100vw;
-    min-height: 100vh;
+    min-height: 96vh;
     background-color: darkslateblue;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    & article{
+    & article {
         height: 70rem;
         width: 50rem;
         background-color: aliceblue;
@@ -31,7 +33,7 @@ main{
         justify-content: space-around;
         font-size: 2rem;
 
-        & #showPassword{
+        & #showPassword {
             font-weight: bold;
             width: 80%;
             word-wrap: break-word;
@@ -40,18 +42,18 @@ main{
             border-radius: 2.5rem;
         }
 
-        & ul{
+        & ul {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
 
-            #titleSettings{
+            #titleSettings {
                 text-align: center;
                 margin-bottom: 1.5rem;
                 font-weight: 800;
             }
 
-            
+
             .labelCheckbox {
                 position: relative;
                 margin: .5rem;
@@ -66,7 +68,8 @@ main{
                 cursor: pointer;
             }
         }
-        #generatePassword{
+
+        #generatePassword {
             cursor: pointer;
             background-color: darkslateblue;
             padding: 1rem 2rem;
@@ -74,11 +77,68 @@ main{
             color: aliceblue;
             transition: all 600ms ease-in-out;
         }
-        
-        #generatePassword:hover{
+
+        #generatePassword:hover {
             background-color: rgba(58, 31, 235, 0.718);
             color: rgb(0, 0, 0);
             scale: 1.1;
+        }
+    }
+
+}
+footer {
+    width: 100%;
+    height: 4vh;
+    background-color: rgb(108, 96, 186);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 0.1rem solid black;
+
+    & h2,
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4vh;
+        font-size: 1.6rem;
+        color: black;
+    }
+
+    & a {
+        border-bottom: 0.1rem solid black;
+        margin-inline: 0.5rem;
+    }
+
+    @media (max-width:620px) {
+
+        & h2,
+        & a {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width:550px) {
+
+        & h2,
+        & a {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width:470px) {
+
+        & h2,
+        & a {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width:400px) {
+
+        & h2,
+        & a {
+            font-size: 0.8rem;
         }
     }
 }
