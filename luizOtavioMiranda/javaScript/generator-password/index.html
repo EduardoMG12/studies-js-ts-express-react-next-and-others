@@ -10,10 +10,11 @@
     <main>
       <article>
           <h1>Password Generator</h1>
-          <p id="showPassword"></p>
+          <p id="showPassword">Select the settings to generate the password</p>
           <ul>
+            <li><p id="titleSettings">Settings</p></li>
               <li><p>Characters Quantity<input value="8" type="number" min="1" max="129" id="inputNumbersQuantity"></p></li>
-              <li><input type="checkbox" class="checkbox" id="checkboxLetters"><label class="labelCheckbox">Add letters</label></li>
+              <li><input type="checkbox" class="checkbox" checked id="checkboxLetters"><label class="labelCheckbox">Add letters</label></li>
               <li><input type="checkbox" class="checkbox" id="checkboxUppercase"><label class="labelCheckbox">Add uppercase</label></li>
               <li><input type="checkbox" class="checkbox" id="checkboxNumbers"><label class="labelCheckbox">Add numbers</label></li>
               <li><input type="checkbox" class="checkbox" id="checkboxSymbols"><label class="labelCheckbox">Add symbols</label></li>
