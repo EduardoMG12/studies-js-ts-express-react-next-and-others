@@ -42,6 +42,7 @@ main article{
 }
 
 #generatePassword{
+    cursor: pointer;
     background-color: darkslateblue;
     padding: 1rem 2rem;
     border-radius: 2.5rem;
