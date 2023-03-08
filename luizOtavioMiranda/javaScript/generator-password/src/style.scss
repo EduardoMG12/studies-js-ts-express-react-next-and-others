@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html, body{
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+}
+
+main{
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: darkslateblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & article{
+        height: 70rem;
+        width: 50rem;
+        background-color: aliceblue;
+        border-radius: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 2rem;
+
+        & #showPassword{
+            font-weight: bold;
+            width: 80%;
+            word-wrap: break-word;
+            border: 2px solid darkslateblue;
+            padding: 1rem 2rem;
+            border-radius: 2.5rem;
+        }
+
+        & ul{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            #titleSettings{
+                text-align: center;
+                margin-bottom: 1.5rem;
+                font-weight: 800;
+            }
+
+            
+            .labelCheckbox {
+                position: relative;
+                margin: .5rem;
+                font-family: Arial, sans-serif;
+                line-height: 135%;
+                cursor: pointer;
+            }
+
+            .checkbox {
+                position: relative;
+                margin: 0 1rem 0 0;
+                cursor: pointer;
+            }
+        }
+        #generatePassword{
+            cursor: pointer;
+            background-color: darkslateblue;
+            padding: 1rem 2rem;
+            border-radius: 2.5rem;
+            color: aliceblue;
+            transition: all 600ms ease-in-out;
+        }
+        
+        #generatePassword:hover{
+            background-color: rgba(58, 31, 235, 0.718);
+            color: rgb(0, 0, 0);
+            scale: 1.1;
+        }
+    }
+}
