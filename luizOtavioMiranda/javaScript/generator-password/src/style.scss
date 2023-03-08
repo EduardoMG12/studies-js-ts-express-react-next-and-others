@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
+$main-color-blue: darkslateblue;
+$main-color-black: black;
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +20,7 @@ body {
 main {
     max-width: 100vw;
     min-height: 96vh;
-    background-color: darkslateblue;
+    background-color: $main-color-blue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +40,7 @@ main {
             font-weight: bold;
             width: 80%;
             word-wrap: break-word;
-            border: 2px solid darkslateblue;
+            border: 2px solid $main-color-blue;
             padding: 1rem 2rem;
             border-radius: 2.5rem;
         }
@@ -71,7 +74,7 @@ main {
 
         #generatePassword {
             cursor: pointer;
-            background-color: darkslateblue;
+            background-color: $main-color-blue;
             padding: 1rem 2rem;
             border-radius: 2.5rem;
             color: aliceblue;
@@ -80,7 +83,7 @@ main {
 
         #generatePassword:hover {
             background-color: rgba(58, 31, 235, 0.718);
-            color: rgb(0, 0, 0);
+            color: $main-color-black;
             scale: 1.1;
         }
     }
@@ -93,7 +96,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    border-top: 0.1rem solid black;
+    border-top: 0.1rem solid $main-color-black;
 
     & h2,
     a {
@@ -102,11 +105,11 @@ footer {
         align-items: center;
         height: 4vh;
         font-size: 1.6rem;
-        color: black;
+        color: $main-color-black;
     }
 
     & a {
-        border-bottom: 0.1rem solid black;
+        border-bottom: 0.1rem solid $main-color-black;
         margin-inline: 0.5rem;
     }
 
