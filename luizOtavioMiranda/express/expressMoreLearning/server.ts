@@ -10,7 +10,7 @@ import flash from "connect-flash" //show messages once
 const app: express.Application = express();
 dotenv.config();
 
-mongoose.connect(process.env.CONNECTION_STRING)
+mongoose.connect(`${process.env.CONNECTION_STRING}`)
     .then(() => {
         app.emit("connect")
         console.log("")
