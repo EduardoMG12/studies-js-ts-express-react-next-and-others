@@ -4,13 +4,13 @@ import path from "path";
 import mongoose from "mongoose";
 import * as dotenv from 'dotenv';
 import bodyParser from "body-parser";
-import session from "express-session";
+import session from "express-session"; //save data for user nagate
 import MongoStore from "connect-mongo";
-import flash from "connect-flash"
+import flash from "connect-flash" //show messages once 
 const app: express.Application = express();
 dotenv.config();
 
-mongoose.connect(`${process.env.CONNECTION_STRING}`)
+mongoose.connect(process.env.CONNECTION_STRING)
     .then(() => {
         app.emit("connect")
         console.log("")
@@ -23,9 +23,9 @@ app.use(session({
     secret: "my-secret",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: MongoStore.create({ mongoUrl: process.env.CONNECTION_STRING }),
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7, //seven days for update cookie
         httpOnly: true
     }
 }))
