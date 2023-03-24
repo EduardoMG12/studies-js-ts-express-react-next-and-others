@@ -4,5 +4,5 @@ export const checkCsurfError = ({ err, req, res, next }: any) => {
 
 export const csurfMiddlewareToken = ({ req, res, next }: any) => {
     res.locals.csurfToken = req.csurfToken();
-    next()
+    next();
 }
