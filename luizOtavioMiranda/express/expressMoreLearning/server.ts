@@ -1,3 +1,4 @@
+import { checkCsurfError, csurfMiddlewareToken } from './src/middlewares/middleware';
 import express from "express";
 import { router } from "./src/Controllers/homeController";
 import path from "path";
@@ -6,8 +7,13 @@ import * as dotenv from 'dotenv';
 import bodyParser from "body-parser";
 import session from "express-session"; //save data for user nagate
 import MongoStore from "connect-mongo";
-import flash from "connect-flash" //show messages once 
+import flash from "connect-flash" //show messages once
+import csurf from "csurf"; //  prevent attacks
+import helmet from "helmet"; // prevent attacks
+
 const app: express.Application = express();
+
+
 dotenv.config();
 
 mongoose.connect(`${process.env.CONNECTION_STRING}`)
@@ -28,21 +34,27 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7, //seven days for update cookie
         httpOnly: true
     }
-}))
+}));
 
 //config flash messages
-app.use(flash())
+app.use(flash());
 
 // config for use post form
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set("views", path.resolve(__dirname, "src", "views"))
-app.set("view engine", "ejs")
+app.set("views", path.resolve(__dirname, "src", "views"));
+app.set("view engine", "ejs");
+
+
+app.use(csurf());
+app.use(helmet());
 
 // This is a middleware
 app.use(bodyParser.json());
+app.use(csurfMiddlewareToken)
+app.use(checkCsurfError)
 
-app.use("/", router)
+app.use("/", router);
 
 app.on("connect", () => {
 
@@ -50,4 +62,4 @@ app.on("connect", () => {
         console.log(`\x1B[32mstart application for port: ${process.env.SERVER_PORT}\x1B[32m`)
         console.log(`\x1B[32m${process.env.URL, process.env.SERVER_PORT}\x1B[32m`)
     })
-})
+});
